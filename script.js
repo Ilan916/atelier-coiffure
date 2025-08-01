@@ -4,26 +4,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const nav = document.querySelector('.nav');
     const header = document.querySelector('.header');
+    const body = document.body;
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-    hamburger.addEventListener('click', function() {
+    function toggleMenu() {
+        const isActive = hamburger.classList.contains('active');
+        
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
-    });
+        menuOverlay.classList.toggle('active');
+        
+        // Bloquer/débloquer le scroll
+        if (!isActive) {
+            body.classList.add('menu-open');
+        } else {
+            body.classList.remove('menu-open');
+        }
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.classList.remove('menu-open');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Fermer le menu quand on clique sur l'overlay
+    menuOverlay.addEventListener('click', closeMenu);
 
     // Fermer le menu quand on clique sur un lien
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
+        link.addEventListener('click', closeMenu);
     });
 
-    // Fermer le menu quand on clique en dehors
-    document.addEventListener('click', function(event) {
-        if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+    // Fermer le menu avec la touche Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && hamburger.classList.contains('active')) {
+            closeMenu();
         }
     });
 
