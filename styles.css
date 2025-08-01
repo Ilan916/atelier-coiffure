@@ -8,6 +8,36 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Classe pour bloquer le scroll quand le menu mobile est ouvert */
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Overlay pour le menu mobile */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .header {
   height: 100vh;
   width: 100%;
@@ -38,6 +68,10 @@ html {
   height: 70px;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 .nav.nav-scrolled {
@@ -52,29 +86,52 @@ html {
 
 .hamburger {
   display: none;
-  flex-direction: column;
   cursor: pointer;
   margin-right: 40px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  z-index: 1001;
 }
 
 .hamburger span {
+  position: absolute;
   width: 25px;
   height: 3px;
   background-color: white;
-  margin: 3px 0;
-  transition: 0.3s;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+.hamburger span:nth-child(1) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 8px;
+}
+
+/* Animation pour transformer en croix */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
 }
 
 /* Responsive styles */
@@ -320,13 +377,16 @@ html {
     right: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.98);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     transition: right 0.3s ease;
     padding-top: 50px;
     margin-right: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .nav-links.active {
