@@ -313,6 +313,64 @@ body.menu-open {
     max-width: 240px;
   }
 
+  /* Tarifs section responsive */
+  .tarifs-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .tarifs-card {
+    padding: 30px 20px;
+  }
+
+  .tarifs-card-title {
+    font-size: 1.4em;
+  }
+
+  .tarif-item {
+    padding: 10px 0;
+  }
+
+  .tarif-label {
+    font-size: 0.9em;
+  }
+
+  .tarif-price {
+    font-size: 0.95em;
+    margin-left: 15px;
+  }
+
+  .tarifs-note {
+    margin-top: 40px;
+    font-size: 0.9em;
+  }
+
+  /* Luxeol section responsive */
+  .luxeol-product {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .luxeol-product-image {
+    order: 2;
+  }
+
+  .luxeol-product-info {
+    order: 1;
+  }
+
+  .luxeol-image {
+    max-height: 400px;
+  }
+
+  .luxeol-product-title {
+    font-size: 1.8em;
+  }
+
+  .luxeol-benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   /* Product section responsive */
   .products-container {
     gap: 30px;
@@ -635,6 +693,68 @@ body.menu-open {
 
   .product-section {
     padding: 50px 15px;
+  }
+
+  /* Tarifs section responsive */
+  .tarifs-section {
+    padding: 50px 15px;
+  }
+
+  .tarifs-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .tarifs-card {
+    padding: 25px 20px;
+  }
+
+  .tarifs-card-title {
+    font-size: 1.3em;
+  }
+
+  .tarif-label {
+    font-size: 0.85em;
+  }
+
+  .tarif-price {
+    font-size: 0.9em;
+    margin-left: 10px;
+  }
+
+  .tarifs-note {
+    font-size: 0.85em;
+  }
+
+  /* Luxeol section responsive */
+  .luxeol-section {
+    padding: 50px 15px;
+  }
+
+  .luxeol-product {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .luxeol-image {
+    max-height: 350px;
+  }
+
+  .luxeol-product-title {
+    font-size: 1.5em;
+  }
+
+  .luxeol-benefits {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .benefit-item {
+    padding: 10px;
+  }
+
+  .lato-small {
+    font-size: 0.8em;
   }
 
   /* Footer responsive */
@@ -1905,6 +2025,341 @@ body.menu-open {
   color: white;
 }
 
+/* luxeol-section */
+.luxeol-section {
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafaf8;
+}
+
+.luxeol-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.luxeol-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 1.1em;
+  margin-bottom: 50px;
+}
+
+.luxeol-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.luxeol-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  align-items: center;
+  width: 100%;
+}
+
+.luxeol-product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+}
+
+.luxeol-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.luxeol-image-placeholder {
+  width: 280px;
+  height: 400px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #404040 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.luxeol-image-placeholder p {
+  margin: 5px 0;
+}
+
+.luxeol-image-placeholder p:first-child {
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.luxeol-image-placeholder p:last-child {
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+.luxeol-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  order: 1;
+}
+
+.luxeol-product-title {
+  font-family: 'Playfair', serif;
+  font-size: 2.2em;
+  color: #333;
+  margin: 0;
+}
+
+.luxeol-benefit {
+  background-color: white;
+  padding: 20px;
+  border-left: 4px solid #8B3A3A;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-label {
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.luxeol-stats {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stats-text {
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.luxeol-formula {
+  background-color: #f0f0f0;
+  padding: 18px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.formula-title {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.luxeol-complement {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  border-top: 3px solid #8B3A3A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 10px;
+}
+
+.complement-title {
+  font-family: 'Playfair', serif;
+  font-size: 1.3em;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.complement-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9em;
+  color: #888;
+  margin: 0 0 10px 0;
+}
+
+.complement-indicators {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95em;
+  color: #666;
+  margin: 8px 0;
+}
+
+.complement-duration {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95em;
+  color: #333;
+  margin: 8px 0 0 0;
+}
+
+.luxeol-benefits {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.benefit-icon {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+
+.lato-small {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85em;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.luxeol-note {
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+  font-size: 0.95em;
+}
+
+/* tarifs-section */
+.tarifs-section {
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.tarifs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.tarifs-card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarifs-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tarifs-card-title {
+  font-family: 'Playfair', serif;
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.tarifs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tarif-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: 'Lato', sans-serif;
+}
+
+.tarif-item:last-child {
+  border-bottom: none;
+}
+
+.tarif-label {
+  color: #555;
+  font-size: 0.95em;
+  flex: 1;
+}
+
+.tarif-price {
+  color: #333;
+  font-weight: 700;
+  font-size: 1em;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.tarif-item.highlight .tarif-label {
+  color: #777;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.tarif-item.highlight .tarif-price {
+  color: #999;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.tarif-item.small-text .tarif-label {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.tarif-item.small-text .tarif-price {
+  font-size: 0.9em;
+}
+
+.tarif-item .brand {
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.tarifs-note {
+  max-width: 600px;
+  text-align: center;
+  margin-top: 50px;
+  color: #888;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.tarifs-note p {
+  margin: 8px 0;
+}
+
 /* product-section */
 .product-section {
   padding: 70px 20px;
@@ -2058,6 +2513,31 @@ body.menu-open {
   width: 100%;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.footer-links .separator {
+  color: #666;
+}
+
 .footer-bottom p {
   font-family: 'Lato', sans-serif;
   font-size: 0.85em;
@@ -2153,5 +2633,229 @@ body.menu-open {
 .avis-content:nth-child(3) { transition-delay: 0.5s; }
 .avis-content:nth-child(4) { transition-delay: 0.7s; }
 
+.tarifs-card:nth-child(1) { transition-delay: 0.2s; }
+.tarifs-card:nth-child(2) { transition-delay: 0.4s; }
+.tarifs-card:nth-child(3) { transition-delay: 0.6s; }
+
 .product-item:nth-child(1) { transition-delay: 0.2s; }
 .product-item:nth-child(2) { transition-delay: 0.4s; }
+
+/* ===== PAGES LEGALES ===== */
+
+/* Header minimal pour pages légales */
+.header-minimal {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-minimal .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  max-width: 100%;
+}
+
+.header-minimal .logo {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+}
+
+.header-minimal .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+}
+
+.header-minimal .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95em;
+  transition: color 0.3s ease;
+}
+
+.header-minimal .nav-links a:hover {
+  color: #8B3A3A;
+}
+
+/* Section légale */
+.legal-section {
+  min-height: calc(100vh - 200px);
+  padding: 80px 50px;
+  background-color: #fafafa;
+}
+
+.legal-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.legal-title {
+  font-family: "Playfair", serif;
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 50px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 3px solid #8B3A3A;
+  padding-bottom: 20px;
+}
+
+.legal-block {
+  margin-bottom: 40px;
+}
+
+.legal-block h2 {
+  font-family: "Playfair", serif;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-left: 4px solid #8B3A3A;
+  padding-left: 15px;
+}
+
+.legal-block p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.95em;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.legal-block ul {
+  font-family: "Lato", sans-serif;
+  font-size: 0.95em;
+  line-height: 1.8;
+  color: #555;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.legal-block ul li {
+  margin-bottom: 10px;
+}
+
+.legal-block a {
+  color: #8B3A3A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.legal-block a:hover {
+  color: #a94d4d;
+  text-decoration: underline;
+}
+
+.legal-block strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Responsive pour les pages légales */
+@media (max-width: 1024px) {
+  .header-minimal .nav {
+    padding: 15px 30px;
+  }
+
+  .header-minimal .nav-links {
+    gap: 25px;
+  }
+
+  .legal-section {
+    padding: 60px 30px;
+  }
+
+  .legal-content {
+    padding: 40px;
+  }
+
+  .legal-title {
+    font-size: 2em;
+  }
+
+  .legal-block h2 {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-minimal .nav {
+    padding: 15px 20px;
+  }
+
+  .header-minimal .nav-links {
+    display: none;
+  }
+
+  .header-minimal .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .header-minimal .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .header-minimal .menu-overlay {
+    display: none;
+  }
+
+  .header-minimal .menu-overlay.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+  }
+
+  .header-minimal .menu-overlay.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .legal-section {
+    padding: 40px 20px;
+  }
+
+  .legal-content {
+    padding: 25px;
+  }
+
+  .legal-title {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+  }
+
+  .legal-block h2 {
+    font-size: 1.1em;
+  }
+
+  .legal-block p,
+  .legal-block ul {
+    font-size: 0.9em;
+  }
+}
